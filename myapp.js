@@ -15,3 +15,6 @@ function set(){
 }
 
 document.getElementById('set').addEventListener('click', set)
+document.getElementById('set').addEventListener('click', function set(e){
+	e.stopPropagation();
+});

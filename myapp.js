@@ -1,20 +1,13 @@
-let elements = document.getElementsByName('cssProperty');
-
-let div = document.getElementById('modify');
-
-function set(){
-	
-
-	for(let index = 0; index < elements.length; index++){
-		let cssProperty = elements[index].getAttribute('id');
-
-		let cssValue = elements[index].value;
-
-		div.style[cssProperty] = cssValue;
-	}
+const elements = document.getElementsByName('cssProperty');
+const div = document.getElementById('modify');
+const set = () => {
+  for (let i = 0; i < elements.length; i++) {
+    const cssProperty = elements[i].getAttribute('id');
+    const cssValue = elements[i].value;
+    div.style[cssProperty] = cssValue;
+  }
 }
-
-document.getElementById('set').addEventListener('click', set)
-document.getElementById('set').addEventListener('click', function set(e){
-	e.stopPropagation();
-});
+document.getElementById('set').addEventListener('click', set, false);
+document.getElementById('set').addEventListener('click', (e) => {
+  e.stopPropagation();
+}, false);
